@@ -39,4 +39,26 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    implementation ("androidx.fragment:fragment:1.6.1")
+
+    implementation ("com.android.support:multidex:1.0.3")
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-scalars:2.6.4")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // rx
+    implementation ("io.reactivex.rxjava2:rxandroid:2.0.1")
+    implementation ("io.reactivex.rxjava2:rxjava:2.0.6")
+    implementation ("com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0")
+
+    implementation ("android.arch.lifecycle:viewmodel:1.1.1")
+    implementation ("android.arch.lifecycle:livedata:1.1.1")
+
+    //type convert
+    implementation ("com.google.code.gson:gson:2.9.1")
+
+    // piccaso
+    implementation ("com.squareup.picasso:picasso:2.8")
 }
