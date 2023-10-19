@@ -40,10 +40,8 @@
                     android:layout_height="@dimen/character_image_height"
                     android:contentDescription="@string/character_image"
                     android:scaleType="centerCrop"
-                    app:placeholder="@{@drawable/ic_launcher_background}"
                     app:characterFullImage="@{character.image}"
-                    />
-
+                    app:placeholder="@{character.gender != `female` ? @drawable/male_placeholder_headshot :  @drawable/female_placeholder_headshot}" />
 
 
                 <LinearLayout
@@ -53,7 +51,7 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/haracter_title"
+                        android:id="@+id/character_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{character.name!=null ? character.name : ``}"
@@ -67,20 +65,12 @@
                         android:weightSum="100">
 
                         <TextView
-                            android:id="@+id/haracter_publisher"
+                            android:id="@+id/character_mob_number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="90"
+                            android:layout_weight="100"
+                            android:text="@string/_8801773405828"
                             android:gravity="start"
-                            android:textSize="@dimen/character_publisher_text_size" />
-
-                        <TextView
-                            android:id="@+id/character_social_score"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:gravity="center"
-                            android:textColor="#FF0000"
                             android:textSize="@dimen/character_publisher_text_size" />
 
 

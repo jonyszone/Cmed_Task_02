@@ -260,7 +260,16 @@ this.image = image;
 
     @BindingAdapter(value = {"characterFullImage", "placeholder"}, requireAll = false)
     public static void loadFullImage(ImageView view, String imageUrl, Drawable placeHolder) {
-        Picasso.get().load(imageUrl).placeholder(placeHolder).into(view);
+        if (imageUrl == null || imageUrl.isEmpty()) {
+            if (placeHolder != null) {
+                view.setImageDrawable(placeHolder);
+            } else {
+                view.setImageResource(R.drawable.male_placeholder_headshot);
+            }
+        } else {
+            // Load the image using Picasso
+            Picasso.get().load(imageUrl).placeholder(placeHolder).into(view);
+        }
     }
 
 }
