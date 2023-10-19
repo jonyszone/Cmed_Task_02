@@ -1,11 +1,13 @@
 package com.assesment.cmedtask02;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
 
 import com.assesment.cmedtask02.databinding.ActivityMainBinding;
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements CharacterAdapter.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         setContentView(activityMainBinding.getRoot());
 
         characterViewModel =new CharacterViewModel(this);
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements CharacterAdapter.
                     characterAdapter = new CharacterAdapter(characterList, this);
                     activityMainBinding.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     activityMainBinding.recyclerView.setAdapter(characterAdapter);
+
+
                 }
             });
 

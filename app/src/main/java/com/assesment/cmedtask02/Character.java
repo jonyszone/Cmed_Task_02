@@ -1,8 +1,14 @@
 package com.assesment.cmedtask02;
 
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+
+import androidx.databinding.BindingAdapter;
+
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.squareup.picasso.Picasso;
 
 public class Character {
 @SerializedName("id")
@@ -225,5 +231,36 @@ return image;
 public void setImage(String image) {
 this.image = image;
 }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", alternateNames=" + alternateNames +
+                ", species='" + species + '\'' +
+                ", gender='" + gender + '\'' +
+                ", house='" + house + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", yearOfBirth=" + yearOfBirth +
+                ", wizard=" + wizard +
+                ", ancestry='" + ancestry + '\'' +
+                ", eyeColour='" + eyeColour + '\'' +
+                ", hairColour='" + hairColour + '\'' +
+                ", wand=" + wand +
+                ", patronus='" + patronus + '\'' +
+                ", hogwartsStudent=" + hogwartsStudent +
+                ", hogwartsStaff=" + hogwartsStaff +
+                ", actor='" + actor + '\'' +
+                ", alternateActors=" + alternateActors +
+                ", alive=" + alive +
+                ", image='" + image + '\'' +
+                '}';
+    }
+
+    @BindingAdapter(value = {"characterFullImage", "placeholder"}, requireAll = false)
+    public static void loadFullImage(ImageView view, String imageUrl, Drawable placeHolder) {
+        Picasso.get().load(imageUrl).placeholder(placeHolder).into(view);
+    }
 
 }

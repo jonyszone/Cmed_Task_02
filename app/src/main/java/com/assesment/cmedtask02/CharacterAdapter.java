@@ -16,8 +16,8 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
     List<Character> characterList;
     ItemClickListener itemClickListener;
 
-    public CharacterAdapter(List<Character> diaryList, ItemClickListener itemClickListener) {
-        this.characterList = diaryList;
+    public CharacterAdapter(List<Character> characterList, ItemClickListener itemClickListener) {
+        this.characterList = characterList;
         this.itemClickListener = itemClickListener;
 
     }

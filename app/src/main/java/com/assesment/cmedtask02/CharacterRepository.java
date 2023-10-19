@@ -49,6 +49,9 @@ public class CharacterRepository {
 
 
                         data.postValue(response.body());
+                       /* for (Character character : response.body()) {
+                            Log.d("Character", "Image URL: " + character.getImage());
+                        }*/
 
 
                     } else {

@@ -25,13 +25,14 @@ android {
             )
         }
     }
+    viewBinding{
+        enable = true
+    }
 
     dataBinding {
         enable = true
     }
-    viewBinding{
-        enable = true
-    }
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
