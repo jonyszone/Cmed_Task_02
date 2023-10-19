@@ -5,14 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.assesment.cmedtask02.databinding.ActivityMainBinding;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CharacterAdapter.ItemClickListener{
     ActivityMainBinding activityMainBinding;
     CharacterViewModel characterViewModel;
+
+    CharacterAdapter characterAdapter;
     List<Character> characterList;
 
     @Override
@@ -31,12 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 if (characters != null) {
                     Log.d("character", "showCharacters: " + characters);
                     characterList = characters;
-                   /* diaryAdapter = new DiaryAdapter(diaryList, this);
-                    binding.diaryRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-                    binding.diaryRecycler.setAdapter(diaryAdapter);*/
+                    characterAdapter = new CharacterAdapter(characterList, this);
+                    activityMainBinding.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    activityMainBinding.recyclerView.setAdapter(characterAdapter);
                 }
             });
 
+
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
 
     }
 }
