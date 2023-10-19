@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.assesment.cmedtask02.databinding.RowCharacterActivityMainBinding;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 
 public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder> {
@@ -41,7 +43,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
     }
 
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
+        void onItemClick(View view, int position) throws IOException;
     }
 
     public class CharacterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -56,8 +58,13 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
 
         @Override
         public void onClick(View v) {
-            if (itemClickListener != null)
-                itemClickListener.onItemClick(v, getAdapterPosition());
+            if (itemClickListener != null) {
+                try {
+                    itemClickListener.onItemClick(v, getAdapterPosition());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 }

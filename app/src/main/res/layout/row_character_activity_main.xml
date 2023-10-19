@@ -40,6 +40,7 @@
                     android:layout_height="@dimen/character_image_height"
                     android:contentDescription="@string/character_image"
                     android:scaleType="centerCrop"
+                    android:transitionName="@string/character_image"
                     app:characterFullImage="@{character.image}"
                     app:placeholder="@{character.gender != `female` ? @drawable/male_placeholder_headshot :  @drawable/female_placeholder_headshot}" />
 
