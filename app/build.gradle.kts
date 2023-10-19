@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.assesment.cmedtask02"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.assesment.cmedtask02"
@@ -25,6 +25,14 @@ android {
             )
         }
     }
+
+    dataBinding {
+        enable = true
+    }
+    viewBinding{
+        enable = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
