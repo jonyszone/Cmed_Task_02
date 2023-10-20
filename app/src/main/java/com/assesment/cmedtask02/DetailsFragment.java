@@ -58,6 +58,8 @@ public class DetailsFragment extends Fragment {
 
         fragmentDetailsBinding.characterTitleDetails.setText(character.getName());
         fragmentDetailsBinding.characterMobNumberDetails.setText(character.getGender());
+        fragmentDetailsBinding.setCharacter(character);
+        fragmentDetailsBinding.executePendingBindings();
 
     }
 }
