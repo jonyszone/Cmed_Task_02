@@ -70,7 +70,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="100"
-                            android:text="@string/_8801773405828"
+                            android:text="@{character.gender!=null ? character.gender : ``}"
                             android:gravity="start"
                             android:textSize="@dimen/character_publisher_text_size" />
 
